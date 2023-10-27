@@ -12,15 +12,11 @@ const initial_CO2 = 1.0
 const initial_H2CO3 = 0.5
 
 # this value is the base rate constant
-const reverse_rate_constant = 0.05
+const reverse_rate_constant = 0.03
 # equilibrium const, is used to find other rate constant
 const equilibrium_const = 2
 # other rate constant, calculated from the other rate constant, using k_f/k_r = k_c
 const forward_rate_constant = reverse_rate_constant * equilibrium_const
-
-
-
-
 
 func _process(delta):
 	# literally rate laws
@@ -35,10 +31,15 @@ func _process(delta):
 	H2O_concentration = max(0, H2O_concentration)
 	CO2_concentration = max(0, CO2_concentration)
 	H2CO3_concentration = max(0, H2CO3_concentration)
-	# adjust values to fit in bar,
-	h2o_bar.value = H2O_concentration * 50
-	co2_bar.value = CO2_concentration * 50
-	h2co3_bar.value = H2CO3_concentration * 50
+	
+	# make sure concentration doesn't overflow bar
+	H2O_concentration = min(10.0,H2O_concentration)
+	CO2_concentration = min(10.0, CO2_concentration)
+	H2CO3_concentration = min(10.0,H2CO3_concentration)
+	# adjust values to fit in bar
+	h2o_bar.value = H2O_concentration * 10
+	co2_bar.value = CO2_concentration * 10
+	h2co3_bar.value = H2CO3_concentration * 10
 
 func _ready():
 	H2O_concentration = initial_H2O

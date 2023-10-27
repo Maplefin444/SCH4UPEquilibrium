@@ -5,6 +5,13 @@
 [node name="EquilibriumSim" type="Node2D"]
 script = ExtResource("1_ndg5v")
 
+[node name="Text1" type="RichTextLabel" parent="."]
+offset_left = 560.0
+offset_top = 96.0
+offset_right = 600.0
+offset_bottom = 120.0
+text = "H2O"
+
 [node name="H2O" type="ProgressBar" parent="."]
 offset_left = 240.0
 offset_top = 128.0
@@ -12,11 +19,25 @@ offset_right = 910.0
 offset_bottom = 155.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Text2" type="RichTextLabel" parent="."]
+offset_left = 560.0
+offset_top = 168.0
+offset_right = 600.0
+offset_bottom = 192.0
+text = "CO2"
+
 [node name="CO2" type="ProgressBar" parent="."]
 offset_left = 240.0
 offset_top = 192.0
 offset_right = 910.0
 offset_bottom = 219.0
+
+[node name="Text3" type="RichTextLabel" parent="."]
+offset_left = 549.0
+offset_top = 240.0
+offset_right = 613.0
+offset_bottom = 264.0
+text = "H2CO3"
 
 [node name="H2CO3" type="ProgressBar" parent="."]
 offset_left = 240.0

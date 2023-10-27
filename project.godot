@@ -14,6 +14,10 @@ config/name="SCH4UPEquilibrium"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 KEY_H={
