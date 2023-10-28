@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtmp67uyqheyt"]
+
+[ext_resource type="Script" path="res://Menu/intro_menu.gd" id="1_yh8dt"]
+[ext_resource type="FontFile" uid="uid://cf06fq4h15lu6" path="res://Menu/Perfect DOS VGA 437.ttf" id="2_vnr33"]
+[ext_resource type="AudioStream" uid="uid://cfld0jsglv6tg" path="res://Menu/insert.mp3" id="3_0y2jb"]
+
+[node name="IntroMenu" type="Node2D"]
+script = ExtResource("1_yh8dt")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="ConsoleText" type="RichTextLabel" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 1128.0
+offset_bottom = 624.0
+theme_override_fonts/normal_font = ExtResource("2_vnr33")
+theme_override_font_sizes/normal_font_size = 32
+
+[node name="insertdisk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0y2jb")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cen1cjk176b0p"]
+
+[ext_resource type="AudioStream" uid="uid://dnkr1hyu24ttk" path="res://Menu/ambient.mp3" id="1_8hl2w"]
+
+[node name="AmbientSound" type="Node2D"]
+
+[node name="ambientpc" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_8hl2w")
+autoplay = true
