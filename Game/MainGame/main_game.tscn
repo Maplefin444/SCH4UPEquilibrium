@@ -1,0 +1,224 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs8fr2345dval"]
+
+[ext_resource type="Script" path="res://Game/MainGame/main_game.gd" id="1_xowuo"]
+[ext_resource type="Theme" uid="uid://dddryrqnni8gj" path="res://Themes.tres" id="2_dqb53"]
+[ext_resource type="AudioStream" uid="uid://b0o16pbhpxxx1" path="res://Game/MainGame/GlitchAudio/knock.mp3" id="2_s6817"]
+[ext_resource type="FontFile" uid="uid://c5w6gscwesgny" path="res://Game/Open-Sans/OpenSans-Regular.ttf" id="3_h7kkd"]
+[ext_resource type="AudioStream" uid="uid://c3nqmggvqylq0" path="res://Game/MainGame/GlitchAudio/cavenoise.mp3" id="3_q84l8"]
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource("1_xowuo")
+
+[node name="knocking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_s6817")
+
+[node name="cavenoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_q84l8")
+volume_db = -5.0
+panning_strength = 10.15
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.823529, 0.933333, 0.843137, 1)
+
+[node name="QuestionLayout" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="QuestionLayout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.0
+offset_top = -279.0
+offset_right = 435.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dqb53")
+
+[node name="Text" type="RichTextLabel" parent="QuestionLayout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -260.0
+offset_right = 394.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_dqb53")
+theme_override_fonts/normal_font = ExtResource("3_h7kkd")
+bbcode_enabled = true
+text = "TEST"
+
+[node name="a" type="Button" parent="QuestionLayout"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 142.0
+offset_top = -342.0
+offset_right = 547.0
+offset_bottom = -224.0
+grow_vertical = 0
+theme = ExtResource("2_dqb53")
+text = "HELLO
+"
+
+[node name="b" type="Button" parent="QuestionLayout"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 597.0
+offset_top = -342.0
+offset_right = 1010.0
+offset_bottom = -224.0
+grow_vertical = 0
+theme = ExtResource("2_dqb53")
+text = "HELLO
+"
+
+[node name="c" type="Button" parent="QuestionLayout"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 142.0
+offset_top = -207.0
+offset_right = 547.0
+offset_bottom = -89.0
+grow_vertical = 0
+theme = ExtResource("2_dqb53")
+text = "HELLO
+"
+
+[node name="d" type="Button" parent="QuestionLayout"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 597.0
+offset_top = -207.0
+offset_right = 1010.0
+offset_bottom = -89.0
+grow_vertical = 0
+theme = ExtResource("2_dqb53")
+text = "HELLO
+"
+
+[node name="TextLayout" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="TextLayout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.5
+offset_top = -206.0
+offset_right = 434.5
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dqb53")
+
+[node name="Text" type="RichTextLabel" parent="TextLayout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -187.0
+offset_right = 394.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_dqb53")
+theme_override_fonts/normal_font = ExtResource("3_h7kkd")
+bbcode_enabled = true
+text = "TEST"
+
+[node name="TitleLayout" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="TitleLayout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.5
+offset_top = -206.0
+offset_right = 434.5
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dqb53")
+
+[node name="Text" type="RichTextLabel" parent="TitleLayout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -187.0
+offset_right = 394.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_dqb53")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "TITLE"
+scroll_active = false
+
+[node name="NextButton" type="Button" parent="."]
+offset_left = 984.0
+offset_top = 568.0
+offset_right = 1136.0
+offset_bottom = 632.0
+theme = ExtResource("2_dqb53")
+text = "NEXT"
+
+[connection signal="pressed" from="QuestionLayout/a" to="." method="_on_a_pressed"]
+[connection signal="pressed" from="QuestionLayout/b" to="." method="_on_b_pressed"]
+[connection signal="pressed" from="QuestionLayout/c" to="." method="_on_c_pressed"]
+[connection signal="pressed" from="QuestionLayout/d" to="." method="_on_d_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

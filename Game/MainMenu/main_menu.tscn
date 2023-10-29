@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://doha6rvs5mx68"]
+
+[ext_resource type="Script" path="res://Game/MainMenu/main_menu.gd" id="1_hi55h"]
+[ext_resource type="Texture2D" uid="uid://c2deghuxa6hp" path="res://Game/MainMenu/Title.png" id="1_r1ynh"]
+[ext_resource type="Theme" uid="uid://dddryrqnni8gj" path="res://Themes.tres" id="2_lqw5j"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_hi55h")
+
+[node name="TitleBG" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_r1ynh")
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 328.0
+offset_right = 765.0
+offset_bottom = 421.0
+scale = Vector2(0.964582, 0.856964)
+theme = ExtResource("2_lqw5j")
+text = "PLAY"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

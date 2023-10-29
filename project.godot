@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="SCH4UPEquilibrium"
+run/main_scene="res://Menu/intro_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 

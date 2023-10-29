@@ -1,0 +1,25 @@
+[
+	{
+		"type":"text",
+		"text":"Hi!\n\nHaving troubles with learning about blood pH? Well, you came to the right place! This interactive and informative piece of media will help [u]you[/u] understand blood pH!"
+	},
+	{
+		"type":"quiz",
+		"text":"This piece of media consists of learning opportunities, and [i]quizzes[/i]! Do you understand?",
+		"correct": "1",
+		"1":"Yes",
+		"2":"Maybe",
+		"3":"NO",
+		"4":"Kind of"
+	},
+	{
+		"type":"title",
+		"text":"[center]The Chemistry of Buffers[\center]"
+	},
+	{
+		"type":"text",
+		"text":"A buffer is an aqueous solution that resists changes in pH upon the addition of an acid or a base. More specifically, it is a conjugate acid-base pair that can resist changes in pH when small volumes of strong acids or bases are added. In order to have an effective buffer, the number of moles of the weak acid and its conjugate base must be significantly large compared to the number of moles of strong acid or base that may be added. The best buffering will occur when the ratio of [HA] to [A-] is almost 1:1. However, a buffer is still effective when the concentration ranges anywhere between 10:1 and 1:10.",
+		"glitch": "3"
+	}
+]
+
