@@ -19,7 +19,7 @@
 	{
 		"type":"text",
 		"text":"A buffer is an aqueous solution that resists changes in pH upon the addition of an acid or a base. More specifically, it is a conjugate acid-base pair that can resist changes in pH when small volumes of strong acids or bases are added. In order to have an effective buffer, the number of moles of the weak acid and its conjugate base must be significantly large compared to the number of moles of strong acid or base that may be added. The best buffering will occur when the ratio of [HA] to [A-] is almost 1:1. However, a buffer is still effective when the concentration ranges anywhere between 10:1 and 1:10.",
-		"glitch": "3"
+		"glitch": "4"
 	}
 ]
 

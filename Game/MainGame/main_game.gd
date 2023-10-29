@@ -48,6 +48,11 @@ func _on_next_button_pressed():
 			if type == "3":
 				await get_tree().create_timer(randi_range(2,5)).timeout
 				$cavenoise.play()
+			if type == "4":
+				await get_tree().create_timer(randi_range(2,5)).timeout
+				$Monster.visible = true
+				await get_tree().create_timer(0.1).timeout
+				$Monster.visible = false
 
 	
 	if(data[read].type == "quiz"):
