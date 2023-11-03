@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cs8fr2345dval"]
+[gd_scene load_steps=9 format=3 uid="uid://cs8fr2345dval"]
 
 [ext_resource type="Script" path="res://Game/MainGame/main_game.gd" id="1_xowuo"]
 [ext_resource type="Theme" uid="uid://dddryrqnni8gj" path="res://Themes.tres" id="2_dqb53"]
@@ -7,9 +7,13 @@
 [ext_resource type="FontFile" uid="uid://c5w6gscwesgny" path="res://Game/Open-Sans/OpenSans-Regular.ttf" id="3_h7kkd"]
 [ext_resource type="AudioStream" uid="uid://u0kb3hmdelvo" path="res://Game/MainGame/GlitchStuff/whispers.mp3" id="4_1qa8s"]
 [ext_resource type="Texture2D" uid="uid://c7j60bki4e4ms" path="res://Game/MainGame/GlitchStuff/monster.png" id="6_eh5cy"]
+[ext_resource type="Texture2D" uid="uid://dbcpkhf1brfrh" path="res://icon.svg" id="7_fillx"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_xowuo")
+
+[node name="VoiceoverPlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = 24.0
 
 [node name="knocking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_hqtdx")
@@ -171,6 +175,11 @@ theme = ExtResource("2_dqb53")
 theme_override_fonts/normal_font = ExtResource("3_h7kkd")
 bbcode_enabled = true
 text = "TEST"
+
+[node name="Icon" type="Sprite2D" parent="TextLayout"]
+visible = false
+position = Vector2(600, 448)
+texture = ExtResource("7_fillx")
 
 [node name="TitleLayout" type="Control" parent="."]
 visible = false

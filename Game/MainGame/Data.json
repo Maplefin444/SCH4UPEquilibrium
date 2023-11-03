@@ -1,7 +1,8 @@
 [
 	{
 		"type":"text",
-		"text":"Hi!\n\nHaving troubles with learning about blood pH? Well, you came to the right place! This interactive and informative piece of media will help [u]you[/u] understand blood pH!"
+		"text":"Hi!\n\nHaving troubles with learning about blood pH? Well, you came to the right place! This interactive and informative piece of media will help [u]you[/u] understand blood pH!",
+		"VO" : "res://Game/MainGame/VO/title.mp3",
 	},
 	{
 		"type":"quiz",
@@ -19,7 +20,17 @@
 	{
 		"type":"text",
 		"text":"A buffer is an aqueous solution that resists changes in pH upon the addition of an acid or a base. More specifically, it is a conjugate acid-base pair that can resist changes in pH when small volumes of strong acids or bases are added. In order to have an effective buffer, the number of moles of the weak acid and its conjugate base must be significantly large compared to the number of moles of strong acid or base that may be added. The best buffering will occur when the ratio of [HA] to [A-] is almost 1:1. However, a buffer is still effective when the concentration ranges anywhere between 10:1 and 1:10.",
-		"glitch": "4"
+		"VO": "res://Game/MainGame/VO/1.mp3",
+		"img":"Icon"
+	},
+	{
+		"type":"title",
+		"text":"[center]The Buffering System of Blood[\center]"
+	},
+	{
+		"type":"text",
+		"text":"The avg. blood pH is 7.40, with a range between 7.35 and 7.45. The buffering system of the blood is ideal for biological processes, specifically the oxygenation of blood. At neutral pH, many intermediates in biochemical processes become ionized, so they can’t continue the reaction. This is why blood pH is slightly greater than neutral. Moreover, the buffer that maintains the pH of human blood involves a carbonic acid - bicarbonate ion system.",
+		"VO": "res://Game/MainGame/VO/2.mp3",
 	}
 ]
 

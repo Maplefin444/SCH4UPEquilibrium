@@ -9,6 +9,9 @@ func _ready():
 	data = JSON.parse_string(FileAccess.get_file_as_string("res://Game/MainGame/Data.json"))
 	if(not data):
 		assert("CAN'T READ FILE")
+	if(data[read].VO):
+		$VoiceoverPlayer.set_stream(load(data[read].VO))
+		$VoiceoverPlayer.play()
 
 func _process(delta):
 	if(data[read].type == "text"):
@@ -31,9 +34,19 @@ func _process(delta):
 
 
 func _on_next_button_pressed():
+	if(data[read].get("type") == "text"):
+		if(data[read].get("img")):
+			$TextLayout.get_node(data[read].img).visible = false
+	if($VoiceoverPlayer.playing):
+		$VoiceoverPlayer.stop()
 	if(len(data) != read+1):
 		read+=1
-	if(data[read].type == "text"):
+	if(data[read].get("type") == "text"):
+		if(data[read].get("VO")):
+			$VoiceoverPlayer.set_stream(load(data[read].VO))
+			$VoiceoverPlayer.play()
+		if(data[read].get("img")):
+			$TextLayout.get_node(data[read].img).visible = true
 		$TextLayout/Text.text = data[read].get("text")
 		if data[read].get("glitch"):
 			var type = data[read].get("glitch")
@@ -53,8 +66,6 @@ func _on_next_button_pressed():
 				$Monster.visible = true
 				await get_tree().create_timer(0.1).timeout
 				$Monster.visible = false
-
-	
 	if(data[read].type == "quiz"):
 		$QuestionLayout/Text.text = data[read].get("text")
 		corrans = int(data[read].get("correct"))
