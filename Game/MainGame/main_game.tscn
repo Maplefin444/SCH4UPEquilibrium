@@ -1,32 +1,65 @@
-[gd_scene load_steps=9 format=3 uid="uid://cs8fr2345dval"]
+[gd_scene load_steps=19 format=3 uid="uid://cs8fr2345dval"]
 
 [ext_resource type="Script" path="res://Game/MainGame/main_game.gd" id="1_xowuo"]
 [ext_resource type="Theme" uid="uid://dddryrqnni8gj" path="res://Themes.tres" id="2_dqb53"]
 [ext_resource type="AudioStream" uid="uid://b0o16pbhpxxx1" path="res://Game/MainGame/GlitchStuff/knock.mp3" id="2_hqtdx"]
+[ext_resource type="Shader" path="res://Game/MainGame/glitch.gdshader" id="2_psjyx"]
+[ext_resource type="AudioStream" uid="uid://dta6nphut3vwx" path="res://Game/MainGame/GlitchStuff/harddrive.mp3" id="3_4gboe"]
 [ext_resource type="AudioStream" uid="uid://c3nqmggvqylq0" path="res://Game/MainGame/GlitchStuff/cavenoise.mp3" id="3_c41x8"]
 [ext_resource type="FontFile" uid="uid://c5w6gscwesgny" path="res://Game/Open-Sans/OpenSans-Regular.ttf" id="3_h7kkd"]
 [ext_resource type="AudioStream" uid="uid://u0kb3hmdelvo" path="res://Game/MainGame/GlitchStuff/whispers.mp3" id="4_1qa8s"]
 [ext_resource type="Texture2D" uid="uid://c7j60bki4e4ms" path="res://Game/MainGame/GlitchStuff/monster.png" id="6_eh5cy"]
 [ext_resource type="Texture2D" uid="uid://dbcpkhf1brfrh" path="res://icon.svg" id="7_fillx"]
+[ext_resource type="Shader" path="res://Game/MainGame/white.gdshader" id="8_5ba5b"]
+[ext_resource type="Texture2D" uid="uid://dmurbriffygv6" path="res://Game/MainGame/Equations/1.png" id="9_lhst0"]
+[ext_resource type="Texture2D" uid="uid://bha0sfesdvq2" path="res://Game/MainGame/Equations/2.png" id="10_6h4hm"]
+[ext_resource type="Texture2D" uid="uid://dmvldmy0s4xxe" path="res://Game/MainGame/Equations/3.png" id="11_3gtak"]
+[ext_resource type="Texture2D" uid="uid://cs53xxnen3o2u" path="res://Game/MainGame/GlitchStuff/angel.webp" id="15_j6tis"]
+[ext_resource type="PackedScene" uid="uid://3aeoxehbtgr" path="res://Equilibrium Simulator/equilibrium_sim.tscn" id="16_4y8nb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yl2nx"]
+shader = ExtResource("2_psjyx")
+shader_parameter/range = 0.01
+shader_parameter/noiseQuality = 100.0
+shader_parameter/noiseIntensity = 0.0088
+shader_parameter/offsetIntensity = 0.03
+shader_parameter/colorOffsetIntensity = 1.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uaeqj"]
+shader = ExtResource("8_5ba5b")
+shader_parameter/whitening = 1e+06
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_xowuo")
 
+[node name="GlitchOverlay" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GlitchOverlay"]
+material = SubResource("ShaderMaterial_yl2nx")
+offset_right = 1152.0
+offset_bottom = 648.0
+
 [node name="VoiceoverPlayer" type="AudioStreamPlayer2D" parent="."]
 volume_db = 24.0
+
+[node name="hdd" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4gboe")
+volume_db = 3.49
 
 [node name="knocking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_hqtdx")
 
 [node name="cavenoise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_c41x8")
-volume_db = -5.0
+volume_db = 11.054
+pitch_scale = 0.67
 panning_strength = 10.15
 
 [node name="whispers" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_1qa8s")
-volume_db = -25.0
-pitch_scale = 0.5
+volume_db = -5.0
+pitch_scale = 0.8
 
 [node name="BG" type="ColorRect" parent="."]
 offset_right = 1152.0
@@ -174,12 +207,29 @@ size_flags_vertical = 4
 theme = ExtResource("2_dqb53")
 theme_override_fonts/normal_font = ExtResource("3_h7kkd")
 bbcode_enabled = true
-text = "TEST"
 
 [node name="Icon" type="Sprite2D" parent="TextLayout"]
 visible = false
 position = Vector2(600, 448)
 texture = ExtResource("7_fillx")
+
+[node name="1" type="Sprite2D" parent="TextLayout"]
+visible = false
+material = SubResource("ShaderMaterial_uaeqj")
+position = Vector2(576, 440)
+texture = ExtResource("9_lhst0")
+
+[node name="2" type="Sprite2D" parent="TextLayout"]
+visible = false
+material = SubResource("ShaderMaterial_uaeqj")
+position = Vector2(576, 440)
+texture = ExtResource("10_6h4hm")
+
+[node name="3" type="Sprite2D" parent="TextLayout"]
+visible = false
+material = SubResource("ShaderMaterial_uaeqj")
+position = Vector2(576, 440)
+texture = ExtResource("11_3gtak")
 
 [node name="TitleLayout" type="Control" parent="."]
 visible = false
@@ -225,6 +275,31 @@ bbcode_enabled = true
 text = "TITLE"
 scroll_active = false
 
+[node name="sim" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="sim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.5
+offset_top = -206.0
+offset_right = 434.5
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dqb53")
+
+[node name="EquilibriumSim" parent="sim" instance=ExtResource("16_4y8nb")]
+position = Vector2(576, 248)
+
 [node name="NextButton" type="Button" parent="."]
 offset_left = 984.0
 offset_top = 568.0
@@ -240,8 +315,15 @@ scale = Vector2(0.930147, 0.890434)
 texture = ExtResource("6_eh5cy")
 offset = Vector2(621.092, 367.407)
 
+[node name="Angel" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(1.71174, 1.24138)
+texture = ExtResource("15_j6tis")
+
 [connection signal="pressed" from="QuestionLayout/a" to="." method="_on_a_pressed"]
 [connection signal="pressed" from="QuestionLayout/b" to="." method="_on_b_pressed"]
 [connection signal="pressed" from="QuestionLayout/c" to="." method="_on_c_pressed"]
 [connection signal="pressed" from="QuestionLayout/d" to="." method="_on_d_pressed"]
+[connection signal="done" from="sim/EquilibriumSim" to="." method="_on_equilibrium_sim_done"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

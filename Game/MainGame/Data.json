@@ -21,7 +21,24 @@
 		"type":"text",
 		"text":"A buffer is an aqueous solution that resists changes in pH upon the addition of an acid or a base. More specifically, it is a conjugate acid-base pair that can resist changes in pH when small volumes of strong acids or bases are added. In order to have an effective buffer, the number of moles of the weak acid and its conjugate base must be significantly large compared to the number of moles of strong acid or base that may be added. The best buffering will occur when the ratio of [HA] to [A-] is almost 1:1. However, a buffer is still effective when the concentration ranges anywhere between 10:1 and 1:10.",
 		"VO": "res://Game/MainGame/VO/1.mp3",
-		"img":"Icon"
+	},
+	{
+		"type":"quiz",
+		"text":"What is the main function of a buffer?",
+		"correct": "2",
+		"1":"Makes the solution basic",
+		"2":"Resists changes in pH",
+		"3":"Makes the solution acidic",
+		"4":"Increases the pKa of solution"
+	},
+	{
+		"type":"quiz",
+		"text":"What ratio of [HA] to [A-] will the best buffering occur?",
+		"correct": "1",
+		"1":"1:1",
+		"2":"10:1",
+		"3":"1:10",
+		"4":"1:20"
 	},
 	{
 		"type":"title",
@@ -31,6 +48,150 @@
 		"type":"text",
 		"text":"The avg. blood pH is 7.40, with a range between 7.35 and 7.45. The buffering system of the blood is ideal for biological processes, specifically the oxygenation of blood. At neutral pH, many intermediates in biochemical processes become ionized, so they can’t continue the reaction. This is why blood pH is slightly greater than neutral. Moreover, the buffer that maintains the pH of human blood involves a carbonic acid - bicarbonate ion system.",
 		"VO": "res://Game/MainGame/VO/2.mp3",
+		"glitch":"3"
+	},
+	{
+		"type":"text",
+		"text":"How the buffer works is fairly simple: When acidic substances enter the bloodstream, the bicarbonate ions neutralize the hydronium ions forming carbonic acid and water.",
+		"VO": "res://Game/MainGame/VO/3.mp3",
+		"img": "1"
+	},
+	{
+		"type":"text",
+		"text":"When a basic substance enters the bloodstream, carbonic acid reacts with the hydroxide ions producing bicarbonate ions and water.",
+		"VO": "res://Game/MainGame/VO/4.mp3",
+		"img": "2",
+		"glitch":"1"
+	},
+	{
+		"type":"text",
+		"text":"Slight changes in the concentrations of the two components of the buffering system don’t have any adverse effects; the critical thing is that this buffering mechanism prevents the blood from becoming too acidic or basic, which can be detrimental. Le Chatelier's Principle is what causes the concentrations to eventually shift to equilibrium.",
+		"VO": "res://Game/MainGame/VO/5.mp3",
+	},
+	{
+		"type":"quiz",
+		"text":"What is the average pH of the blood?",
+		"correct": "1",
+		"1":"7.40",
+		"2":"6.40",
+		"3":"8.40",
+		"4":"5.40"
+	},
+	{
+		"type":"quiz",
+		"text":"What principle causes concentrations to shift to equilibrium?",
+		"correct": "4",
+		"1":"Le Catlier's Principle",
+		"2":"Le Doglier's Principle",
+		"3":"Le Animalier's Principle",
+		"4":"Le Chatelier's Principle"
+	},
+	{
+		"type":"title",
+		"text":"[center]Applications of Equilibrium[\center]"
+	},
+	{
+		"type":"text",
+		"text":"Consider the following equation. When we increase the concentration of hydronium ions, it will naturally shift to make more water and carbon dioxide due to Le Chatelier’s principle. Thus, if the body isn’t reabsorbing enough bicarbonate or not secreting enough hydronium ions, the body can send out carbon dioxide to restore equilibrium.",
+		"VO": "res://Game/MainGame/VO/6.mp3",
+		"img":"3",
+		"glitch":"5"
+	},
+		{
+		"type":"text",
+		"text":"On the next slide, a simulation of Le Chatelier's principle can be found. Try to get to 65% carbonic acid!",
+	},
+	{
+		"type":"sim"
+	},
+	{
+		"type":"quiz",
+		"text":"What will happen if the concentration of hydronium ions increases?",
+		"correct": "4",
+		"1":"Shift to make more water",
+		"2":"Shift to make more carbon dioxide",
+		"3":"Shift to make more hydronium",
+		"4":"Shift to make more carbon dioxide and water"
+	},
+	{
+		"type":"quiz",
+		"text":"What will the body send out when it is not reabsorbing enough bicarbonate ions or secreting enough hydronium ions?",
+		"correct": "4",
+		"1":"Water",
+		"2":"Bicarbonate ions",
+		"3":"Hydronium ions",
+		"4":"Carbon dioxide"
+	},
+	{
+		"type":"title",
+		"text":"[center]General Methods of Maintaining Blood pH[\center]"
+	},
+	{
+		"type":"text",
+		"text":"Blood pH is maintained at both a cellular and organ level.
+At a cellular level, carbon dioxide is a byproduct of cellular respiration, which reacts with water to create carbonic acid. Carbonic acid dissociates into bicarbonate and a hydrogen ion This equation is reversible, and the equilibrium helps to prevent any large changes of pH in the human body.",
+		"VO": "res://Game/MainGame/VO/7.mp3",
+		"glitch":"2"
+	},
+	{
+		"type":"text",
+		"text":"At an organ level, the pulmonary system can output carbon dioxide out of the body, which can reduce the amount of carbonic acid. Additionally, the renal system can absorb bicarbonate and excrete fixed acids. This essentially changes the pH of the urine. As well, by reabsorbing bicarbonate, or excreting fixed acids, the urine becomes less acidic.
+",
+		"VO": "res://Game/MainGame/VO/8.mp3",
+	},
+	{
+		"type":"quiz",
+		"text":"Blood pH is maintained in which level(s)",
+		"correct": "4",
+		"1":"Cellular",
+		"2":"Organ",
+		"3":"Population",
+		"4":"Cellular and organ"
+	},
+	{
+		"type":"quiz",
+		"text":"What is the direct byproduct of cellular respiration?",
+		"correct": "3",
+		"1":"Bicarbonate ions",
+		"2":"Hydronium ions",
+		"3":"Carbon dioxide",
+		"4":"Carbonic acid"
+	},
+	{
+		"type":"title",
+		"text":"[center]Importance of Maintaining Blood pH[\center]"
+	},
+	{
+		"type":"text",
+		"text":"If the blood pH goes to anything below 6.8 or above 7.8, cells of the body can stop functioning and the person can die. This is because enzymes are very specific in nature, and function optimally at the right temperature and the right pH. If the pH of blood goes out of range, the enzymes stop working and sometimes enzymes can even get permanently denatured. This can disable their catalytic activity leading to disruptions in metabolism and also the development of diseases.",
+		"VO": "res://Game/MainGame/VO/9.mp3",
+	},
+	{
+		"type":"text",
+		"text":"Looking more specifically at pH changes, a lower pH results in hemoglobin’s affinity for oxygen to decrease whereas a higher pH results in a higher hemoglobin oxygen affinity. It is also important to note that for proteins to carry their functions, their charges have to be right. A wrong pH can result in the change in the charges of the protein, and can interfere with the processes.",
+		"VO": "res://Game/MainGame/VO/10.mp3",
+		"glitch":"4"
+	},
+		{
+		"type":"quiz",
+		"text":"What happens if pH goes out of the optimum range?",
+		"correct": "2",
+		"1":"Nothing",
+		"2":"Body stops functioning",
+		"3":"Person will become stronger",
+		"4":"All of the above"
+	},
+	{
+		"type":"quiz",
+		"text":"What does a lower pH result in specifically in hemoglobin?",
+		"correct": "2",
+		"1":"Affinity for oxygen increases",
+		"2":"Affinity for oxygen decreases",
+		"3":"Affinity for carbon dioxide increases",
+		"4":"None of the above"
+	},
+	{
+		"type":"end"
 	}
 ]
 

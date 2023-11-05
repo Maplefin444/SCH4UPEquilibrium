@@ -9,7 +9,7 @@ func _ready():
 	data = JSON.parse_string(FileAccess.get_file_as_string("res://Game/MainGame/Data.json"))
 	if(not data):
 		assert("CAN'T READ FILE")
-	if(data[read].VO):
+	if(data[read].get("VO")):
 		$VoiceoverPlayer.set_stream(load(data[read].VO))
 		$VoiceoverPlayer.play()
 
@@ -18,7 +18,7 @@ func _process(delta):
 		if textglitch != 1:
 			$TextLayout/Text.text = data[read].get("text")
 		else:
-			$TextLayout/Text.text = "HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP"
+			$TextLayout/Text.text = "HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP"
 		$TextLayout.visible = true
 	else:
 		$TextLayout.visible = false
@@ -31,6 +31,14 @@ func _process(delta):
 		$TitleLayout.visible = true
 	else:
 		$TitleLayout.visible = false
+	if(data[read].get("type") == "sim"):
+		$sim.visible = true
+	else:
+		$sim.visible = false
+		$sim/EquilibriumSim.paused = true
+	if(data[read].type == "end"):
+		$TextLayout/Text.text = "HELP ME"
+		$TextLayout.visible = true
 
 
 func _on_next_button_pressed():
@@ -41,6 +49,18 @@ func _on_next_button_pressed():
 		$VoiceoverPlayer.stop()
 	if(len(data) != read+1):
 		read+=1
+	if(data[read].get("type") == "sim"):
+		$sim.visible = true
+		$sim/EquilibriumSim.paused = false
+		$NextButton.visible = false
+	if(data[read].get("type") == "end"):
+		$TextLayout/Text.text = "HELP ME"
+		$GlitchOverlay.visible = true
+		$hdd.play()
+		await get_tree().create_timer(7.0).timeout
+		$Angel.visible = true
+		await get_tree().create_timer(0.1).timeout
+		get_tree().change_scene_to_file("res://Game/Ending/ending.tscn")
 	if(data[read].get("type") == "text"):
 		if(data[read].get("VO")):
 			$VoiceoverPlayer.set_stream(load(data[read].VO))
@@ -66,6 +86,9 @@ func _on_next_button_pressed():
 				$Monster.visible = true
 				await get_tree().create_timer(0.1).timeout
 				$Monster.visible = false
+			if type == "5":
+				await get_tree().create_timer(randi_range(2,5)).timeout
+				$whispers.play()
 	if(data[read].type == "quiz"):
 		$QuestionLayout/Text.text = data[read].get("text")
 		corrans = int(data[read].get("correct"))
@@ -100,3 +123,7 @@ func _on_c_pressed():
 func _on_d_pressed():
 	if(corrans != 4): $QuestionLayout/d.disabled = true;
 	else: $NextButton.visible = true
+
+
+func _on_equilibrium_sim_done():
+	$NextButton.visible = true
